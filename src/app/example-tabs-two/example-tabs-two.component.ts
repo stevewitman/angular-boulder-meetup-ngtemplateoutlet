@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-example-one',
-  templateUrl: './example-one.component.html',
-  styleUrls: ['./example-one.component.scss'],
+  selector: 'app-example-tabs-two',
+  templateUrl: './example-tabs-two.component.html',
+  styleUrls: ['./example-tabs-two.component.scss'],
 })
-export class ExampleOneComponent {
+export class ExampleTabsTwoComponent {
   resorts = [
     {
       id: 0,

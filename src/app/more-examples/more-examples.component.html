@@ -1,0 +1,70 @@
+<!-- Examples from https://www.youtube.com/watch?v=qHdTiM1Nngw -->
+
+<h2>Example 1</h2>
+<div class="example">
+  <ng-container *ngTemplateOutlet="templeteOne"></ng-container>
+  <ng-template #templeteOne>
+    <p>example one</p>
+  </ng-template>
+</div>
+
+
+<h2>Example 2</h2>
+<div class="example">
+  <ng-container *ngTemplateOutlet="templeteTwo; context:{$implicit: 'TWO'}"></ng-container>
+  <!-- See https://angular.io/guide/structural-directives (about half way down) for information on "let-___" syntax -->
+  <ng-template #templeteTwo let-value>
+    <p>example {{ value }}</p>
+  </ng-template>
+</div>
+
+
+<h2>Example 3</h2>
+<div class="example">
+  <ng-container [ngTemplateOutlet]="templeteThree" [ngTemplateOutletContext]="{$implicit: 'THREE'}"></ng-container>
+  <ng-template #templeteThree let-value>
+    <p>example {{ value }}</p>
+  </ng-template>
+</div>
+
+
+<h2>Example 4</h2>
+<div class="example">
+  <ng-container [ngTemplateOutlet]="templeteFour"
+  [ngTemplateOutletContext]="{ $implicit: 'four', meetupName: 'Angular Boulder'}"></ng-container>
+  <ng-template #templeteFour let-value let-meetupName='meetupName'>
+    <p>Example: {{ value }}</p>
+    <p>Meetup: {{ meetupName }}</p>
+  </ng-template>
+</div>
+
+
+<h2>Example 5</h2>
+<div class="example">
+  <ng-container [ngTemplateOutlet]="templeteFive"
+  [ngTemplateOutletContext]="{ $implicit: asyncData | async }"></ng-container>
+  <ng-template #templeteFive let-value>
+    <p>Name: {{ value?.fName}} {{ value?.lName }}</p>
+  </ng-template>
+</div>
+
+<h2>Example 6</h2>
+<div class="example">
+  <ng-container [ngTemplateOutlet]="templeteSix"
+  [ngTemplateOutletContext]="{ $implicit: asyncData | async, locationData: locationData | async }"></ng-container>
+  <ng-template #templeteSix let-value let-location="locationData">
+    <p>Name: {{ value?.fName}} {{ value?.lName }}</p>
+    <p>Location: {{ location?.location}} </p>
+    <button (click)=getLocation()>Get Location</button>
+  </ng-template>
+</div>
+
+<h2>Example 7</h2>
+<div class="example">
+  <ng-container [ngTemplateOutlet]="templeteSeven" [ngTemplateOutletContext]="{myObj: someObject}"></ng-container>
+  <ng-template #templeteSeven let-obj="myObj">
+    <p>Size: {{ obj.size }}</p>
+    <p>Color: {{ obj.color }}</p>
+  </ng-template>
+</div>
+

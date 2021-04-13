@@ -1,9 +1,25 @@
 <div class="example">
   
-  <h1>Example (vert-tabs component) using ngTemplateOutlet</h1>
-  
-  <app-example-one></app-example-one>
+  <h1>Examples using ngTemplateOutlet</h1>
 
-  <app-example-two></app-example-two>
+  <app-more-examples></app-more-examples>
+
+  <app-example-eight>
+    <ng-template #templateEight>
+      <p>My Template</p>
+    </ng-template>
+  </app-example-eight>
+
+  <app-example-nine [templateNine]="templateNineRef">
+    <ng-template #templateNineRef>
+      <p>Template NINE</p>
+    </ng-template>
+  </app-example-nine>
+
+  <h2>Tabs Example 1</h2>
+  <app-example-tabs-one></app-example-tabs-one>
+
+  <h2>Tabs Example 2</h2>
+  <app-example-tabs-two></app-example-tabs-two>
 
 </div>

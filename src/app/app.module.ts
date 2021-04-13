@@ -3,20 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { VertTabsComponent } from './vert-tabs/vert-tabs.component';
-import { ExampleOneComponent } from './example-one/example-one.component';
-import { ExampleTwoComponent } from './example-two/example-two.component';
+import { ExampleTabsTwoComponent } from './example-tabs-two/example-tabs-two.component';
+import { ExampleTabsOneComponent } from './example-tabs-one/example-tabs-one.component';
+import { MoreExamplesComponent } from './more-examples/more-examples.component';
+import { ExampleEightComponent } from './example-eight/example-eight.component';
+import { ExampleNineComponent } from './example-nine/example-nine.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VertTabsComponent,
-    ExampleOneComponent,
-    ExampleTwoComponent
+    ExampleTabsTwoComponent,
+    ExampleTabsOneComponent,
+    MoreExamplesComponent,
+    ExampleEightComponent,
+    ExampleNineComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
