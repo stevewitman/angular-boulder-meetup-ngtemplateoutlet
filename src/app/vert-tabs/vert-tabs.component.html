@@ -1,1 +1,29 @@
-<p>vert-tabs works!</p>
+<div class="vert-tabs">
+
+  <div class="tab-group">
+    <div class="tab-label" [class.tab-selected]="tab === selected" *ngFor="let tab of tabs; index as i" (click)="selectTab(tab)">
+      <ng-template #defaultTab>
+        <div class="tab">
+          {{ tab?.label || tab }}
+        </div>
+      </ng-template>
+      <ng-container
+        [ngTemplateOutlet]="tabTemplateRef || defaultTab"
+        [ngTemplateOutletContext]="{ $implicit: tab, index: i }"
+      ></ng-container>
+    </div>
+    <div class="tab-extra"></div>
+  </div>
+
+  <div class="tab-main">
+    <ng-template #defaultSelected>
+      <h2>{{ selected?.label }}</h2>
+    </ng-template>
+    <ng-container
+      [ngTemplateOutlet]="selectedTemplateRef || defaultSelected"
+      [ngTemplateOutletContext]="{ $implicit: selected }"
+    >
+    </ng-container>
+  </div>
+
+</div>

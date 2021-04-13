@@ -1,0 +1,25 @@
+.vert-tabs {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: left;
+  height: 100%
+}
+.tab-group {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.tab-label {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+.tab-extra {
+  padding: 0;
+  height: 100%;
+  background-color: #FFFFFF;
+}
+.tab-main {
+  background-color: #FFFFFF;
+  color: #000000;
+}

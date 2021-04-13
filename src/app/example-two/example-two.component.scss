@@ -1,0 +1,16 @@
+.prod-images {
+  width: 550px;
+  height: 360px;
+  margin: 20px;
+}
+.img-tab {
+  width: 60px;
+  box-sizing: border-box;
+}
+.img-tab:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+.img-main {
+  width: 500px;
+}

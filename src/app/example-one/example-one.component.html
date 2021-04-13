@@ -1,2 +1,23 @@
-<p>example-one works!</p>
-<app-vert-tabs></app-vert-tabs>
+<div class="resort-promo">
+  <ng-template #selectedTemplate let-resort>
+    <div class="tab-main">
+      <img class="img-tab" src="/assets/images/{{ resort?.imgUrl }}" />
+      <h2 class="tab-header">{{ resort?.label | uppercase }}</h2>
+      <p class="tab-description">{{ resort?.description }}</p>
+    </div>
+  </ng-template>
+
+  <app-vert-tabs
+    [initialTab]="initialTab"
+    [tabs]="resorts"
+    (selectionChanged)="selectedTab = $event"
+    [selectedTemplate]="selectedTemplate"
+  >
+    <!-- Using @ContentChild to pass template into component tab -->
+    <ng-template class="tab-content" #tabTemplate let-resort let-id="index">
+      <div class="tab" [class.tab-selected]="selectedTab === resort">
+        {{ resort.label }}
+      </div>
+    </ng-template>
+  </app-vert-tabs>
+</div>
